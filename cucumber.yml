@@ -1,0 +1,7 @@
+default: -p html_report -p stage
+
+#AMBIENTES
+stage: AMBIENTE=stage
+prod: AMBIENTE=prod
+
+html_report: --format pretty -f html -o reports/tests_report.html
