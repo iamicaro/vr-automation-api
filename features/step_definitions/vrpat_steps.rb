@@ -4,9 +4,9 @@ end
 
 Então('o atributo {string} é retornado no corpo da requisição') do |atributo|
     expect(@vrpat.code).to eq(200)
-    establishment = @vrpat['typeOfEstablishment']
+    establishment = @vrpat["#{atributo}"]
     expect(establishment).to be_truthy
-    random_index = rand(establishment.size)
+    random_index = rand(establishment.size - 1)
     puts "Key: #{establishment[random_index]['key']}"
     puts "Name: #{establishment[random_index]['name']}"
     puts "Label: #{establishment[random_index]['label']}"
